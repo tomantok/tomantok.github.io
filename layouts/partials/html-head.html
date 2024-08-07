@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{{ if .IsHome }}{{ .Site.Title }}'s blog{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ .Page.Title }}{{ else }}{{ if .Page.Title }}{{ print .Page.Title ` | ` }}{{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ default .Summary .Description | plainify | htmlUnescape | chomp }}" />
 
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
