@@ -1,0 +1,21 @@
+{
+  "plugins": ["prettier-plugin-go-template"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "go-template",
+        "printWidth": 170
+      }
+    },
+    {
+      "files": ["*.js"],
+      "options": {
+        "singleQuote": true,
+        "printWidth": 170,
+        "trailingComma": "none",
+        "quoteProps": "preserve"
+      }
+    }
+  ]
+}

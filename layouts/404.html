@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    {{- if not (fileExists "assets/_gen/style.css") }}
+      {{- errorf "Use `npm run build` to generate 'style.css' file." }}
+    {{ end }}
+
+    {{- $css := cond (hugo.IsProduction) (resources.Get "_gen/style.css" | minify).Content (resources.Get "_gen/style.css").Content | resources.FromString "style.css" | fingerprint "md5" }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
+  </head>
+  <body class="">
+    <div class="flex flex-col py-8 sm:py-12 sm:px-6 lg:px-8">
+      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
+        <div class="bg-white py-8 px-4 sm:border border-gray-200 sm:rounded sm:px-10 text-center sm:text-left">
+          <h2 class="text-3xl font-black">404</h2>
+          <div class="my-4 text-md leading-tight">This page doesn't exist. Try searching for something else.</div>
+
+          <a href="/" class="mt-2 inline-flex text-sm leading-6 btn-outline py-1 px-4"> Go to the homepage &rarr; </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

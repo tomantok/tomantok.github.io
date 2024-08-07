@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:not(pre) > code {
+  @apply bg-[#f0f0f0] py-0.5 px-1 rounded-md;
+}
+/*
+.highlight pre {
+  background-color: #ECEEF1 !important;
+}
+*/
+/*
+code {display:none}
+*/
+.btn-normal {
+  @apply text-center text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.btn-outline {
+  @apply text-center text-blue-600 dark:text-blue-400 dark:hover:text-white hover:text-white bg-transparent hover:bg-blue-600 rounded-md border dark:border-blue-400 dark:hover:border-blue-600 border-blue-600 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+.bs-callout {
+  @apply border-l-4 my-2 py-3 px-4;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child,
+.bs-callout blockquote:last-child {
+  margin-bottom: 0;
+}
+
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #eed3d7;
+}
+.bs-callout-danger h4 {
+  color: #b94a48;
+}
+.bs-callout-warning {
+  background-color: #faf8f0;
+  border-color: #faebcc;
+}
+.bs-callout-warning h4 {
+  color: #c09853;
+}
+.bs-callout-info {
+  @apply bg-blue-50 border-blue-400;
+}
+.bs-callout-info h4 {
+  color: #3a87ad;
+}
+
+#TableOfContents {
+  @apply border border-gray-200 rounded-md my-1 py-3 px-2 sm:px-5;
+}
+
+#TableOfContents ol,
+#TableOfContents ul {
+  margin: 0;
+}
+
+#TableOfContents ol li,
+#TableOfContents ul li {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+a.anchor {
+  visibility: hidden;
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a {
+  visibility: visible;
+}
+
+/* Twitter Widget */
+
+#twidget {
+  @apply flex items-center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tuser {
+  @apply flex items-center text-sm;
+  padding: 2px 12px 2px 12px;
+  background-color: #111;
+  color: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.tuser:hover {
+  background-color: #555;
+}
+
+.tuser span {
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+.tcount {
+  @apply flex items-center text-sm;
+  position: relative;
+  background: #fff;
+  border: #829aab solid 1px;
+  border-radius: 4px;
+  min-height: 24px;
+  min-width: 15px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 0 0 0 6px;
+}
+
+.tcount i,
+.tcount u {
+  position: absolute;
+  zoom: 1;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 50%;
+  margin: -5px 0 0 -5px;
+  border: 4px transparent solid;
+  border-right-color: #829aab;
+  border-left: 0;
+  border-width: 5px 5px 5px 0;
+}
+
+.tcount u {
+  margin-left: -4px;
+  border-right-color: #fff;
+}
+
+.tcount a {
+  white-space: nowrap;
+  color: #333;
+  padding: 0 8px;
+}
+
+.tcount a:hover {
+  text-decoration: none;
+}

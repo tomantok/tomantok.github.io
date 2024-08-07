@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <body class="flex flex-col h-full">
+    {{ partial "navigation" . }}
+
+
+    <main class="flex-1 px-5 md:px-8">
+      <div class="mx-auto max-w-screen-sm pb-24">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Blog</h1>
+
+        <div class="border-t border-gray-400 mt-7">
+          {{ $pages := .Site.RegularPages }}
+          {{ range .Data.Pages }}
+            {{ $title := .Title }}
+            {{ $summary := .Summary }}
+
+
+            <div class="flex flex-col items-start justify-between py-8 border-b border-gray-400{{ with .Draft }}{{ ` opacity-35` }}{{ end }}">
+              <div class="group relative">
+                <h3 class="mt-1 text-2xl tracking-tight font-extrabold text-gray-900 sm:leading-none md:text-3xl group-hover:underline decoration-2 underline-offset-4">
+                  <a href="{{ .RelPermalink }}"><span class="absolute inset-0"></span> {{ $title }}</a>
+                </h3>
+
+                <p class="mt-5 line-clamp-3 leading-6 text-lg text-gray-600">
+                  {{ with .Description }}
+                    {{ . }}
+                  {{ else }}
+                    {{ $summary | plainify | htmlUnescape }}
+                  {{ end }}
+                  <a href="{{ .RelPermalink }}" class="text-sm text-blue-600 uppercase whitespace-nowrap group-hover:underline underline-offset-2">Read More →</a>
+                </p>
+              </div>
+
+              <div class="flex items-center gap-x-4 text-sm mt-4">
+                <time datetime="{{ .PublishDate.Format `2006-01-02` }}" class="uppercase text-xs text-gray-500 font-bold">{{ .PublishDate.Format `Jan 2, 2006` }}</time>
+
+                <!-- <div class="relative z-10 rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-600">Newsletter</div> -->
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </main>
+
+    {{ partial "footer" . }}
+  </body>
+{{ end }}

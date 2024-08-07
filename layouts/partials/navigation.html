@@ -1,0 +1,26 @@
+<header class="bg-white mb-12">
+  <div class="mx-auto max-w-5xl px-5 md:px-8">
+    <nav class="relative z-50 flex items-center justify-between border-gray-400 border-b py-4">
+      <div class="flex flex-1 md:flex-none">
+        {{ if not .IsHome }}
+          <a class="flex items-center gap-1.5" href="/">
+            <img class="inline-block size-10 rounded-full" src="/img/avatar-1.png" alt="" />
+            <div class="inline text-lg font-bold leading-5 text-gray-900 ml-2">Tom Antok</div>
+          </a>
+        {{ end }}
+
+      </div>
+      <div id="twidget">
+        <a class="tuser" title="Follow @tom_antok on Twitter" href="https://x.com/intent/follow?screen_name=tom_antok" target="_blank">
+          <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M2.04875 3.00002L9.77052 13.3248L1.99998 21.7192H3.74882L10.5519 14.3697L16.0486 21.7192H22L13.8437 10.8137L21.0765 3.00002H19.3277L13.0624 9.76874L8.0001 3.00002H2.04875ZM4.62054 4.28821H7.35461L19.4278 20.4308H16.6937L4.62054 4.28821Z"
+            ></path>
+          </svg>
+          <span>Follow</span>
+        </a>
+        <div class="tcount"><i></i><u></u><a href="https://x.com/intent/follow?screen_name=tom_antok" target="_blank">80.3k</a></div>
+      </div>
+    </nav>
+  </div>
+</header>

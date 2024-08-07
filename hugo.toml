@@ -1,0 +1,25 @@
+baseURL = "https://tomantok.github.io/"
+languageCode = "en-us"
+title = "Tom Antok"
+summaryLength=15
+disableKinds = ['taxonomy', 'term', 'RSS']
+disableAliases = true
+enableRobotsTXT = true
+enableEmoji = true
+pluralizeListTitles = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+#[markup.goldmark.parser]
+#  wrapStandAloneImageWithinParagraph = false
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+  ordered = false
+  
+[markup.highlight]
+  guessSyntax = true
+  # friendly, nord
+  style = "friendly"

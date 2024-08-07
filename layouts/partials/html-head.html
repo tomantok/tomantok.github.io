@@ -1,0 +1,16 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ if .IsHome }}{{ .Site.Title }}'s blog{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ default .Summary .Description | plainify | htmlUnescape | chomp }}" />
+
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{- if not (fileExists "assets/_gen/style.css") }}{{- errorf "Use `npm run build` to generate 'style.css' file." }}{{ end }}
+{{- $css := cond (hugo.IsProduction)
+  (resources.Get "_gen/style.css" | minify).Content (resources.Get "_gen/style.css").Content | resources.FromString "style.css" | fingerprint "md5"
+}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" />
